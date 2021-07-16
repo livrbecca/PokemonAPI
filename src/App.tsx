@@ -15,6 +15,7 @@ function App() {
   const [nextUrl, setNextUrl] = useState<string>("");
   const [previousUrl, setPreviousUrl] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(true);
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
   let initialUrl: string = "https://pokeapi.co/api/v2/pokemon/";
 
@@ -66,6 +67,13 @@ function App() {
     setPokemonData(fullLengthPokemonData);
   };
   console.log("pokemon data state", pokemonData);
+
+  const searchBar = pokemonData.filter(
+    (val) =>
+      val.name.toLocaleLowerCase().includes(searchTerm) ||
+      val.abilities[0].ability.name.toLocaleLowerCase().includes(searchTerm) ||
+      val.types[0].type.name.toLocaleLowerCase().includes(searchTerm)
+  );
   return (
     <div className="App">
       <Navbar />
@@ -73,12 +81,18 @@ function App() {
         <button onClick={handlePrevious}> Previous</button>
         <button onClick={handleNext}>Next</button>
       </div>
+      <input
+        type="text"
+        placeholder="search"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
       {loading ? (
         <h1>Loading Pokemon....Gotta catch them all!</h1>
       ) : (
         <>
           <div className="grid-container">
-            {pokemonData.map((pokemon, key) => {
+            {searchBar.map((pokemon, key) => {
               return <Card key={key} pokemon={pokemon} />;
             })}
           </div>
