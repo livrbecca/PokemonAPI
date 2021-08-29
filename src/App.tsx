@@ -81,12 +81,15 @@ function App() {
         <button onClick={handlePrevious}> Previous</button>
         <button onClick={handleNext}>Next</button>
       </div>
-      <input
-        type="text"
-        placeholder="search"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
+      <div className="searchB">
+        <input
+          className="search"
+          type="text"
+          placeholder="search"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+      </div>
       {loading ? (
         <h1>Loading Pokemon....Gotta catch them all!</h1>
       ) : (

@@ -25,7 +25,7 @@ body {
 }
 
 .card {
-  margin-top: 10%;
+  margin-top: 6%;
   background-color: rgba(216, 209, 209, 0.685);
   width: 450px;
   height: 490px;
@@ -100,13 +100,23 @@ body {
   width: 390px;
   margin: auto;
   position: relative;
+  text-align: center;
   top: 80px;
 }
 
 button {
   font-size: 25px;
   margin-right: 5%;
-  background-color: rgba(255, 0, 0, 0.493);
-  border-radius: 20%;
-  border: solid rgb(47, 104, 178) 5px;
+  background-color: rgba(255, 166, 0, 0.541);
+  border-radius: 10%;
+  border: solid rgb(47, 104, 178) 3px;
+}
+
+.searchB {
+  text-align: center;
+}
+
+.search {
+  width: 300px;
+  font-size: 20px;
 }
