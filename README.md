@@ -1,6 +1,5 @@
 # Pokemon Directory App
-- created with React
-- 
+- created with React, TypeScript, the Poke API & CSS
 # To Start
 - ``yarn`` to install dependencies
 - ``yarn start`` to start the app.
