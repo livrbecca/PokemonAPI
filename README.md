@@ -1,5 +1,6 @@
 # Pokemon Directory App
 - created with React, TypeScript, the Poke API & CSS
+- External API used: https://pokeapi.co/
 # To Start
 - ``yarn`` to install dependencies
 - ``yarn start`` to start the app.
